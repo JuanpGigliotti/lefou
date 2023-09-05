@@ -1,0 +1,569 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body-index {
+  background-image: url(links/imagenes/bodyindex.jpg);
+}
+
+/* Estilos Gral */
+label {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.5em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.3);
+}
+
+h3, p {
+  font-family: "EB Garamond", serif;
+}
+
+/* Header */
+.mobile-nav {
+  display: none;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+}
+header .logo-container .logo {
+  padding: 0.6em;
+  color: #fff;
+}
+header .nav-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+  padding: 0 2.5em;
+  list-style: none;
+  flex-wrap: wrap;
+}
+header .nav-bar li a {
+  font-size: 1.1em;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  color: #fff;
+}
+header .nav-bar li a:hover {
+  color: #c5c2c2;
+}
+
+.museo-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: #c5c2c2;
+  background-size: cover;
+  background-position: center;
+  background-image: url(imagenes/fondo1.jpg);
+  animation: museo-container 18s infinite linear;
+}
+.museo-container .museomoderno {
+  display: inline-block;
+  padding: 0.9em;
+  color: #fff;
+  padding: 12em 2.5em;
+}
+@keyframes museo-container {
+  0%, 50% {
+    background-image: url(links/imagenes/fondo1.jpg);
+  }
+  51%, 100% {
+    background-image: url(links/imagenes/baner1.webp);
+  }
+}
+
+/* Contenedor main */
+.main-container {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+}
+.main-container .information {
+  display: flex;
+}
+.main-container .visit {
+  display: flex;
+  justify-content: center;
+  padding: 0.9em;
+}
+.main-container a {
+  text-decoration: none;
+  color: #fff;
+}
+.main-container a:hover {
+  color: #c5c2c2;
+}
+.main-container .days, .main-container .bookings, .main-container .guides {
+  text-align: center;
+  border: 0.2em dotted #fff;
+  font-size: 1.2em;
+  width: 33.3%;
+  padding: 10px;
+  margin: 0.5em;
+  text-decoration: none;
+}
+
+/* Contenedor experiencia y expone */
+.experience, .expo {
+  background-color: #000;
+  color: #fff;
+  margin: 3em;
+  text-align: center;
+  padding: 2.5em;
+}
+.experience p, .expo p {
+  line-height: 1.5;
+  font-size: 1.2em;
+}
+.experience img, .experience .carousel-inner img, .expo img, .expo .carousel-inner img {
+  max-width: 70%;
+  height: auto;
+  margin: 1.25em auto;
+}
+
+.card-coleccion-index {
+  background-color: #000;
+}
+.card-coleccion-index h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 0.5em;
+}
+.card-coleccion-index .card-lista-index {
+  display: flex;
+  padding: 3rem;
+  overflow-x: scroll;
+}
+.card-coleccion-index .card-lista-index::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-coleccion-index .card-lista-index .card-index {
+  letter-spacing: 3px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 350px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: -1em 0 3em #000;
+  transition: 0.2s;
+}
+.card-coleccion-index .card-lista-index .card-index:hover {
+  transform: translateY(-1em);
+}
+.card-coleccion-index .card-lista-index .card-index:hover ~ .card-index {
+  transform: translateX(130px);
+}
+.card-coleccion-index .card-lista-index .card-index:not(:nth-child(1)) {
+  margin-left: -130px;
+}
+.card-coleccion-index .card-lista-index .card-index h3 {
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  padding: 0.4em;
+}
+.card-coleccion-index .card-lista-index .card-index img {
+  width: 100%;
+  height: 90%;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  margin: 1.25em;
+  padding: 2.5em;
+}
+footer h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 2.5em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+footer .footer-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+footer .footer-list ul li a {
+  margin: 0 1.5em;
+  text-decoration: none;
+  color: #fff;
+}
+footer .icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+footer .icons a {
+  padding: 0 0.625em;
+  text-decoration: none;
+}
+footer .copy p {
+  opacity: 50%;
+  text-align: center;
+  padding-top: 2.5em;
+  color: #fff;
+  margin: 0;
+}
+
+/* Mobile index.html */
+@media (max-width: 600px) {
+  body {
+    background-image: url("../coder/links/imagenes/bodyindex.jpg");
+  }
+  header {
+    display: none;
+  }
+  .information {
+    display: block;
+  }
+  .main-container .days, .bookings, .guides {
+    width: 96%;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .navbar-brand {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 2.5em;
+  }
+  .offcanvas-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5em;
+  }
+}
+/*historia.html*/
+.body-historia {
+  background-image: url(links/img/fondohistoria.jpg);
+}
+
+/* Historia-container */
+.fundacion-lefou {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+}
+.fundacion-lefou .historia-lefou {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+.fundacion-lefou .historia-lefou img {
+  text-align: center;
+  border: 0.2em solid #000;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Sobrenosotros-container */
+.sobrenosotros-container {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 2em;
+  display: block;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+.sobrenosotros-container .card {
+  margin: 0.3em;
+  border-radius: 0;
+}
+
+/* Eventos.html */
+.body-eventos {
+  background-image: url(links/img/fondoeventos.jpg);
+}
+
+.eventos-container {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+.eventos-container .eventos-tittle {
+  padding: 0.5em;
+  text-align: center;
+}
+.eventos-container .eventos-tittle p {
+  font-size: 1.4em;
+}
+.eventos-container .evento {
+  color: #000;
+  margin: 1.2em;
+}
+.eventos-container .evento img {
+  border: 3px solid rgb(252, 251, 251);
+  width: 100%;
+  height: 12em;
+}
+.eventos-container .evento .evento-info {
+  border: 3px solid rgb(252, 251, 251);
+  line-height: 1;
+  padding: 0.5em;
+}
+.eventos-container .evento .evento-info h3 {
+  font-family: "Phudu", cursive;
+}
+.eventos-container .evento .evento-info a, .eventos-container .evento .evento-info i {
+  margin-left: 5px;
+  text-align: end;
+  font-family: "Bebas Neue", sans-serif;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding-top: 2em;
+}
+.eventos-container .evento .evento-info #evento1 a {
+  bottom: -26%;
+}
+.eventos-container .evento .evento-info h3 {
+  font-size: 2em;
+  text-align: center;
+}
+.eventos-container #evento1 {
+  background: linear-gradient(#FF8C00, #ffeb3b);
+}
+.eventos-container #evento2 {
+  background: linear-gradient(#8768dd, #d889c4);
+}
+.eventos-container #evento3 {
+  background: linear-gradient(#05b83b, #9bfc93);
+}
+.eventos-container #evento4 {
+  background: linear-gradient(#49b6ff, #afcee7);
+}
+.eventos-container #evento5 {
+  background: linear-gradient(#fc4d4d, #eb9d9d);
+}
+@media (min-width: 600px) {
+  .eventos-container .evento {
+    display: flex;
+  }
+  .eventos-container .evento img {
+    width: 53%;
+    height: auto;
+  }
+  .eventos-container #evento2, .eventos-container #evento4 {
+    flex-direction: row-reverse;
+  }
+  .eventos-container .evento-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .eventos-container .evento-info a:hover {
+    border-bottom: 2px solid black;
+  }
+  .eventos-container .evento-info h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+/* Galeria.html */
+.body-galeria {
+  background: linear-gradient(#c5c2c2, #78788c, #444, #222, #000);
+}
+
+.galeria-container {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+.galeria-container h2 {
+  text-align: center;
+}
+.galeria-container .galeria-img {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+}
+.galeria-container .galeria-img img {
+  width: 100%;
+  height: 18em;
+  border: 1px solid #fff;
+  object-fit: cover;
+  filter: opacity(0.8);
+}
+.galeria-container .galeria-img img:nth-child(1) {
+  grid-column-start: span 2;
+}
+@media (min-width: 600px) {
+  .galeria-container {
+    margin-top: 2em;
+  }
+  .galeria-container .galeria-img {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2em;
+  }
+  .galeria-container .galeria-img img {
+    transition: transform 0.3s ease-in-out;
+  }
+  .galeria-container .galeria-img img:hover {
+    transform: scale(1.1);
+    filter: none;
+  }
+}
+
+/* Visitas.html */
+.body-visitas {
+  background-image: url(links/img/fondovisitas.jpg);
+}
+
+.visitas-tittle .visita-texto h2 {
+  background-color: #ffd000;
+  color: #000;
+  font-family: "Bebas Neue", sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.8em;
+  margin-top: 3em;
+}
+
+.visitas-container {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.visitas-container .info-visitas {
+  background-color: #000;
+  margin: 0.5em;
+  padding: 0.8em;
+  text-align: start;
+  line-height: 1.4;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+.visitas-container .info-visitas h3 {
+  font-size: 2.1em;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+.visitas-container .info-visitas h4 {
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+.visitas-container .boton-visitas {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.2em;
+  background-color: #ff6600;
+  color: #000;
+  padding: 0.5em;
+  border: none;
+  border-radius: 6px;
+  letter-spacing: 3px;
+}
+.visitas-container .mapa-visitas {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+}
+
+/*Desktop Visitas*/
+@media (min-width: 600px) {
+  .visita-texto h2 {
+    margin-top: 1em;
+  }
+  .visitas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2em;
+  }
+  .visitas-container :nth-child(3) {
+    grid-column-start: span 2;
+  }
+  .visitas-container :nth-child(4) {
+    grid-column-start: span 2;
+  }
+  .info-visitas .mapa-visitas {
+    height: 15em;
+  }
+}
+/* Contacto.html */
+.body-contacto {
+  background-image: url(links/img/fondocontacto.jpg);
+}
+
+.form {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.1;
+  text-align: center;
+  height: 60%;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #ccc;
+  /* Desktop contacto */
+}
+.form h2 {
+  padding-top: 1em;
+}
+.form input {
+  box-sizing: border-box;
+  background: none;
+  border: 0;
+  color: #fff;
+  transition: all 0.3s;
+  border-bottom: 2px solid #78788c;
+}
+.form input:focus {
+  border-bottom: 2px solid #78788c;
+}
+.form button {
+  margin-top: 0.4em;
+}
+@media (min-width: 600px) {
+  .form {
+    margin-top: 2em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
