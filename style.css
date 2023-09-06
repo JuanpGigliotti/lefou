@@ -107,7 +107,7 @@ header .nav-bar li a:hover {
   text-align: center;
   border: 0.2em dotted #fff;
   font-size: 1.2em;
-  width: 33.3%;
+  width: 96%;
   padding: 10px;
   margin: 0.5em;
   text-decoration: none;
@@ -125,7 +125,7 @@ header .nav-bar li a:hover {
   line-height: 1.5;
   font-size: 1.2em;
 }
-.experience img, .experience .carousel-inner img, .expo img, .expo .carousel-inner img {
+.experience img, .expo img {
   max-width: 70%;
   height: auto;
   margin: 1.25em auto;
@@ -203,16 +203,18 @@ footer .footer-list ul li a {
   text-decoration: none;
   color: #fff;
 }
-footer .icons {
+
+.icons {
   display: flex;
   justify-content: center;
   margin-top: 2em;
 }
-footer .icons a {
+.icons a {
   padding: 0 0.625em;
   text-decoration: none;
 }
-footer .copy p {
+
+.copy p {
   opacity: 50%;
   text-align: center;
   padding-top: 2.5em;
@@ -228,11 +230,16 @@ footer .copy p {
   header {
     display: none;
   }
-  .information {
+  .main-container .information {
     display: block;
   }
-  .main-container .days, .bookings, .guides {
-    width: 96%;
+  .experience, .expo {
+    margin: 0.5em;
+  }
+  .experience img, .expo img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.25em auto;
   }
   .mobile-nav {
     display: block;

@@ -122,7 +122,7 @@
       text-align: center;
       border: 0.2em dotted #fff;
       font-size: 1.2em;
-      width: 33.3%;
+      width: 96%;
       padding: 10px;
       margin: 0.5em;
       text-decoration: none;
@@ -141,12 +141,12 @@
       line-height: 1.5;
       font-size: 1.2em;
     }
-  
-    img, .carousel-inner img {
+    img {
       max-width: 70%;
       height: auto;
       margin: 1.25em auto;
     }
+    
   }
   
   .card-coleccion-index {
@@ -234,6 +234,7 @@
         }
       }
     }
+  }
   
     .icons {
       display: flex;
@@ -253,11 +254,10 @@
       color: #fff;
       margin: 0;
     }
-  }
+  
   
   /* Mobile index.html */
-  
-  @media (max-width: 600px) {
+    @media (max-width : 600px)  {
     body {
       background-image: url("../coder/links/imagenes/bodyindex.jpg");
     }
@@ -266,14 +266,19 @@
       display: none;
     }
   
-    .information {
+  .main-container {
+    .information { 
       display: block;
     }
-  
-    .main-container .days, .bookings, .guides {
-      width: 96%;
+  }
+  .experience, .expo {
+    margin: 0.5em;
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1.25em auto;
     }
-  
+  }
     .mobile-nav {
       display: block;
     }
@@ -287,7 +292,9 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.5em;
     }
+  
   }
+
 
 /*historia.html*/
   
