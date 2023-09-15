@@ -3,20 +3,44 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-.body-index {
-  background-image: url(imagenes/bodyindex.jpg);
+/*Mixins*/
+@mixin containers-principales {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  margin-top: 6em;
+  padding: 1em;
+  font-size: 1.1em;
+  line-height: 1.1;
+  text-align: center;
 }
 
-/* Estilos Gral */
-label {
+/*Variables*/
+$color-botones:  #ff6600;
+$font-botones-links: 'Bebas Neue', sans-serif;
+
+/* Estilos */
+.logo{
+  margin: 1em 0.5em;
+  a{
   font-family: 'Cinzel Decorative', cursive;
   font-size: 2.5em;
+  text-decoration: none;
+  color: #fff;
+   }
+  
+}
 
-h2 {
-  font-family: 'Bebas Neue', sans-serif;
+#first {
+  font-family: $font-botones-links;
+  font-size: 4em;
+  padding: 2em 0.7em;
+
+}
+h1, h2 {
+  font-family: $font-botones-links;
   font-size: 3.5em;
-  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.3);
 }
 
 h3, p {
@@ -24,6 +48,10 @@ h3, p {
 }
 
 /* Header */
+.body-index {
+  background-image: url(img/bodyindex.jpg);
+}
+
 
 .mobile-nav {
   display: none;
@@ -45,8 +73,7 @@ header {
   .nav-bar {
     display: flex;
     justify-content: center;
-    margin-top: 2.5em;
-    padding: 0 2.5em;
+    margin: 2.5em 0;
     list-style: none;
     flex-wrap: wrap;
 
@@ -64,6 +91,10 @@ header {
     }
   }
 }
+.mobile-nav {
+  background-color: black;
+}
+
 
 .museo-container {
   position: relative;
@@ -72,7 +103,7 @@ header {
   background-color: #c5c2c2;
   background-size: cover;
   background-position: center;
-  background-image: url(imagenes/fondo1.jpg);
+  background-image: url(img/fondo1.jpg);
   animation: museo-container 18s infinite linear;
 
   .museomoderno {
@@ -84,10 +115,10 @@ header {
 
   @keyframes museo-container {
     0%, 50% {
-      background-image: url(imagenes/fondo1.jpg);
+      background-image: url(img/fondo1.jpg);
     }
     51%, 100% {
-      background-image: url(imagenes/baner1.webp);
+      background-image: url(img/baner1.webp);
     }   
   }
 }
@@ -119,7 +150,7 @@ header {
 
   .days, .bookings, .guides {
     text-align: center;
-    border: 0.2em dotted #fff;
+    border: 0.2em solid #fff;
     font-size: 1.2em;
     width: 96%;
     padding: 10px;
@@ -137,8 +168,9 @@ header {
   padding: 2.5em;
 
   p {
-    line-height: 1.5;
+    line-height: 1.4;
     font-size: 1.2em;
+    padding: 0 12em;
   }
   img {
     max-width: 70%;
@@ -154,7 +186,7 @@ header {
   h2 {
     text-align: center;
     color: #fff;
-    padding-top: 0.5em;
+    padding-top: 1em;
   }
 
   .card-lista-index {
@@ -193,7 +225,7 @@ header {
       }
 
       h3 {
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: $font-botones-links;
         text-align: center;
         padding: 0.4em;
       }
@@ -277,10 +309,18 @@ footer {
     height: auto;
     margin: 1.25em auto;
   }
+  p {
+    padding: 1em;
+  }
 }
   .mobile-nav {
     display: block;
+    
   }
+  .navbar {
+    background: #000 !important ;
+  }
+  
 
   .navbar-brand {
     font-family: 'Cinzel Decorative', cursive;
@@ -288,7 +328,7 @@ footer {
   }
 
   .offcanvas-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: $font-botones-links;
     font-size: 2.5em;
   }
 
@@ -303,18 +343,21 @@ footer {
 
 /* Historia-container */
 .fundacion-lefou {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
-  margin-top: 6em;
+  @include containers-principales;
 
   .historia-lefou {
     display: block;
     text-align: center;
     padding: 1em;
     font-size: 1.2em;
-    line-height: 1.1;
+    line-height: 1.4;
+    @media (min-width: 600px) {
+      p {
+        padding: 0 12em;
+      }
+
+    }
+    
 
     img {
       text-align: center;
@@ -327,21 +370,27 @@ footer {
 
 /* Sobrenosotros-container */
 .sobrenosotros-container {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
+  @include containers-principales;
   margin-top: 2em;
-  display: block;
-  text-align: center;
-  padding: 1em;
-  font-size: 1.2em;
-  line-height: 1.1;
+  p {
+    font-size: 1.2em;
+    line-height: 1.1;
+  }
+  @media (min-width: 600px) {
+    p {
+      padding: 0 12em;
+    }
+
+  }
 
 .card {
    margin: 0.3em;
    border-radius: 0;
+   p {
+    padding: 0;
+   }
   }
+
 }
 
 
@@ -351,14 +400,7 @@ footer {
 }
 
 .eventos-container {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
-  margin-top: 6em;
-  padding: 0.5em;
-  font-size: 1.2em;
-  line-height: 1.1;
+  @include containers-principales;
 
   .eventos-tittle {
     padding: 0.5em;
@@ -384,18 +426,20 @@ footer {
       line-height: 1;
       padding: 0.5em;
 
-      h3 {
+      h2 {
+        font-size: 2em;
         font-family: 'Phudu', cursive;
       }
 
       a , i {
         margin-left: 5px;
         text-align: end;
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: $font-botones-links;
         color: #000;
         text-decoration: none;
         letter-spacing: 2px;
         padding-top: 2em;
+        border-bottom: 2px solid transparent;
       }
 
       #evento1 a {
@@ -465,14 +509,7 @@ footer {
 }
 
 .galeria-container {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
-  margin-top: 6em;
-  padding: 1em;
-  font-size: 1.2em;
-  line-height: 1.1;
+  @include containers-principales;
 
   h2 {
     text-align: center;
@@ -516,101 +553,97 @@ footer {
 
 /* Visitas.html */
 .body-visitas {
-background-image: url(img/fondovisitas.jpg);
-}
-
-.visitas-tittle {
-  .visita-texto {
+  background-image: url(img/fondovisitas.jpg);
+  }
+  
+  .visitas-tittle {
+    .visita-texto {
+      h1 {
+        background-color: #ffd000;
+        color: #000;
+        font-family: $font-botones-links;
+        border-radius: 5px;
+        text-align: center;
+        padding: 0.8em;
+        margin-top: 2em;
+      }
+    }
+  }
+  
+  .visitas-container {
+  @include containers-principales;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  .info-visitas {
+    background-color: #000;
+    margin: 0.3em;
+    padding: 0.8em;
+    text-align: start;
+    line-height: 1.4;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    width: 100%;
+    font-size: 1.2em;
+  
     h2 {
-      background-color: #ffd000;
-      color: #000;
-      font-family: 'Bebas Neue', sans-serif;
-      border-radius: 5px;
+      font-size: 2.1em;
       text-align: center;
-      padding: 0.8em;
-      margin-top: 3em;
+      font-family: $font-botones-links;
     }
-  }
-}
-
-.visitas-container {
-margin-left: 0.5em;
-margin-right: 0.5em;
-background-color: rgba(0, 0, 0, 0.9);
-color: #fff;
-margin-top: 6em;
-padding: 1em;
-font-size: 1.2em;
-line-height: 1.1;
-text-align: center;
-border-radius: 8px;
-box-shadow: 0 0 40px -10px #ccc;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-
-.info-visitas {
-  background-color: #000;
-  margin: 0.5em;
-  padding: 0.8em;
-  text-align: start;
-  line-height: 1.4;
-  border-radius: 5px;
-  border: 1px solid #fff;
-
-  h3 {
-    font-size: 2.1em;
-    text-align: center;
-    font-family: 'Bebas Neue', sans-serif;
-  }
-
-  h4 {
-    display: inline-block;
-    border-bottom: 1px solid #fff;
+  
+    h3 {
+      display: inline-block;
+      border-bottom: 1px solid #fff;
+      }
     }
+  
+  .boton-visitas {
+    font-family: $font-botones-links;
+    font-size: 1.2em;
+    background-color: #ff6600;
+    color: #000;
+    padding: 0.5em;
+    border: none;
+    border-radius: 6px;
+    letter-spacing: 3px;
+    text-decoration: none;
   }
-
-.boton-visitas {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2em;
-  background-color: #ff6600;
-  color: #000;
-  padding: 0.5em;
-  border: none;
-  border-radius: 6px;
-  letter-spacing: 3px;
-}
-
-.mapa-visitas {
-  width: 100%;
-  height: 50%;
-  border-radius: 5px;
-}
-
-}
-/*Desktop Visitas*/
-@media (min-width: 600px)  {
-.visita-texto h2{
-    margin-top: 1em;
-}
-.visitas-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 2em;
-}
-.visitas-container :nth-child(3){
-    grid-column-start: span 2 ;
-}
-.visitas-container :nth-child(4){
-    grid-column-start: span 2 ;
-}
-.info-visitas {
+  
   .mapa-visitas {
-    height: 15em;
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
   }
-}
-
-}
+  
+  }
+  /*Desktop Visitas*/
+  @media (min-width: 600px)  {
+  .visita-texto h2{
+      margin-top: 1em;
+  }
+  .visitas-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 2em;
+  }
+  .visitas-container :nth-child(3){
+      grid-column-start: span 2 ;
+  }
+  .visitas-container :nth-child(4){
+      grid-column-start: span 2 ;
+  }
+  .info-visitas {
+    .mapa-visitas {
+      height: 15em;
+    }
+  }
+  
+  }
 /* Contacto.html */
 
 .body-contacto {
@@ -618,23 +651,26 @@ background-image: url(img/fondocontacto.jpg);
 }
 
 .form {
-margin-left: 0.5em;
-margin-right: 0.5em;
-background-color: rgba(0, 0, 0, 0.9);
-color: #fff;
-margin-top: 6em;
-padding: 1em;
-font-size: 1.2em;
-line-height: 1.1;
+@include containers-principales;
 text-align: center;
 height: 60%;
 border-radius: 8px;
-box-shadow: 0 0 40px -10px #ccc;
 
 h2 {
     padding-top: 1em;
 }
-
+.info-contacto {
+  font-family: $font-botones-links;
+  letter-spacing: 1;
+  font-size: 1.3em;
+#telefono {
+  margin: 0.6em;
+  padding-top: 0;
+}
+#email {
+  margin: 0.4em;
+}
+}
 input {
     box-sizing: border-box;
     background: none;
@@ -649,14 +685,22 @@ input {
 }
 
 button {
-    margin-top: 0.4em;
+  font-family: $font-botones-links;
+  font-size: 1.3em;
+  background-color: #000;
+  transition: all 0.3s;
+  border: 0.7px solid #fff;
+  margin-top: 0.4em;
+  &:hover {
+    background-color: $color-botones;
+    border: 1px solid #000;
+  }
 }
 
 /* Desktop contacto */
 @media (min-width: 600px) {
     margin-top: 2em;
-}
-}
-} 
+  }
+ }
 
 /*# sourceMappingURL=style.css.map */
